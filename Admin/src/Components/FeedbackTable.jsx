@@ -66,12 +66,12 @@ const FeedbackTable = () => {
           <p className="text-sm text-gray-500">
             Status: {fb.reviewed ? "✅ Reviewed" : "🕓 Pending"}
           </p>
-          <div className="mt-2 flex gap-3 flex justify-center align-center">
+          <div className="mt-2 flex gap-3 justify-center align-center">
             {!fb.reviewed && (
               <button
                 onClick={() => markAsReviewed(fb._id)}
                 className="bg-green-600 text-white px-3 py-1 rounded cursor-pointer"
-              >
+              > 
                 Mark as Reviewed
               </button>
             )}
