@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const FeedbackForm = () => {
@@ -77,7 +77,10 @@ const FeedbackForm = () => {
                 checked={checkbox1}
                 onChange={(e) => setCheckbox1(e.target.checked)}
               />
-              <p className="px-2 text-sm"><span className="text-red-600">Feedback </span>is considered fairly.</p>
+              <p className="px-2 text-sm">
+                <span className="text-red-600">Feedback </span>is considered
+                fairly.
+              </p>
             </div>
             <div className="flex items-center">
               <input
@@ -85,7 +88,9 @@ const FeedbackForm = () => {
                 checked={checkbox2}
                 onChange={(e) => setCheckbox2(e.target.checked)}
               />
-              <p className="px-2 text-sm">Your input helps us improve continuously.</p>
+              <p className="px-2 text-sm">
+                Your input helps us improve continuously.
+              </p>
             </div>
           </div>
 
