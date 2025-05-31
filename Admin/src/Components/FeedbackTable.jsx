@@ -70,7 +70,7 @@ const FeedbackTable = () => {
             {!fb.reviewed && (
               <button
                 onClick={() => markAsReviewed(fb._id)}
-                className="bg-green-600 text-white px-3 py-1 rounded"
+                className="bg-green-600 text-white px-3 py-1 rounded cursor-pointer"
               >
                 Mark as Reviewed
               </button>
