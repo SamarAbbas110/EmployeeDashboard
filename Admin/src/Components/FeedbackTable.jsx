@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { backendURL } from "../App";
 
 const FeedbackTable = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -8,7 +9,7 @@ const FeedbackTable = () => {
   const fetchFeedbacks = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/feedback${category ? `?category=${category}` : ""}`
+        backendURL + `/feedback${category ? `?category=${category}` : ""}`
       );
       setFeedbacks(res.data);
     } catch (error) {
@@ -22,7 +23,7 @@ const FeedbackTable = () => {
 
   const markAsReviewed = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/feedback/${id}/reviewed`);
+      await axios.patch(backendURL + `/feedback/${id}/reviewed`);
       fetchFeedbacks(); // Refresh after update
     } catch (error) {
       console.error("Failed to mark as reviewed", error);

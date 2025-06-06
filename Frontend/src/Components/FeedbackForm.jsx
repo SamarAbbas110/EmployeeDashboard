@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { backendURL } from "../App";
 
 const FeedbackForm = () => {
   const [text, setText] = useState("");
@@ -15,7 +16,9 @@ const FeedbackForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/feedback", {
+      console.log("backend" , backendURL)
+      await axios.post(backendURL + "/feedback", {
+        
         text,
         category,
       });
